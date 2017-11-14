@@ -1,0 +1,9 @@
+# packages.list
+#
+# This is a list of packages to be installed on the vm.
+# only 1 package per line.
+# NO inline comments... the script builds a list based on the return of:
+#    grep -v '#' $0
+
+vim
+net-tools
