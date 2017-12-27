@@ -116,4 +116,12 @@ if [ ${unmount_vagrant} != 'no' ]; then
   nohup sleep 5 && cd / && umount -f ${base} &
 fi
 
+# There is a bug when upgrading kernel mounts disappear after reboot.
+# This is a workaround.
+
+/etc/init.d/vboxadd setup
+
+echo -e "If /vagrant won't mount try this:\n"
+echo "sudo /etc/init.d/vboxadd setup"
+
 exit 0
